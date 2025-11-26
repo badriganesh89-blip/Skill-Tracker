@@ -1,0 +1,51 @@
+<nav class="navbar">
+  <div class="logo">SkillTracker</div>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/students/">Students</a></li>
+    <li><a href="/add-student/">Add Student</a></li>
+    <li><a href="/add-skill/">Add Skill</a></li>
+    <li><a href="/dashboard/">Dashboard</a></li>
+  </ul>
+</nav>
+
+<style>
+  .navbar {
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #1cc88a;
+  }
+</style>

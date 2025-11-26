@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Students</title>
+  <style>
+    :root {
+      --bg1: #1cc88a;
+      --bg2: #2ecc71;
+      --card-bg: rgba(255,255,255,0.92);
+      --muted: #6b7280;
+      --btn: #2ecc71;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0;
+      min-height:100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      padding:36px 20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .topbar {
+      width:100%;
+      max-width:1100px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:22px;
+    }
+    .brand { color:white; font-size:20px; font-weight:700; }
+    .actions { display:flex; gap:10px; }
+    .btn {
+      padding:10px 14px;
+      background:var(--card-bg);
+      border-radius:8px;
+      text-decoration:none;
+      color:#222;
+      font-weight:600;
+    }
+    .primary {
+      padding:10px 14px;
+      background:var(--btn);
+      border-radius:8px;
+      color:white;
+      font-weight:700;
+      text-decoration:none;
+    }
+    .container { width:100%; max-width:1100px; }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+      gap:18px;
+    }
+    .card {
+      background:var(--card-bg);
+      padding:18px;
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    }
+    .student-name {
+      font-size:18px;
+      font-weight:700;
+    }
+    .meta {
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+    .card-actions { display:flex; gap:8px; }
+    .link {
+      padding:8px 10px;
+      background:white;
+      border-radius:8px;
+      text-decoration:none;
+      color:#222;
+      font-weight:600;
+    }
+    .empty {
+      padding:30px;
+      background:rgba(255,255,255,0.15);
+      color:white;
+      border-radius:10px;
+      text-align:center;
+      font-weight:600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar container">
+    <div class="brand">Student Skill Tracker</

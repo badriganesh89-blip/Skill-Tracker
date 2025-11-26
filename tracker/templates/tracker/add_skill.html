@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Skill</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #4e73df, #1cc88a);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        width: 400px;
+        background: #ffffffcc;
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      label {
+        font-weight: bold;
+        display: block;
+        text-align: left;
+        margin-top: 15px;
+      }
+
+      select,
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        border-radius: 6px;
+        border: 1px solid #888;
+        font-size: 16px;
+      }
+
+      button {
+        margin-top: 25px;
+        width: 100%;
+        padding: 12px;
+        background: #4e73df;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #2e59d9;
+      }
+
+      .back-btn {
+        margin-top: 15px;
+        display: inline-block;
+        text-decoration: none;
+        color: #444;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h2>Add Skill to Student</h2>
+
+      <form method="POST">
+        {% csrf_token %}
+
+        <label>Select Student:</label>
+        <select name="student" required>
+          <option value="">-- choose student --</option>
+          {% for s in students %}
+          <option value="{{ s.id }}">{{ s.name }}</option>
+          {% endfor %}
+        </select>
+
+        <label>Skill Name:</label>
+        <input type="text" name="skill" placeholder="Enter skill" required />
+
+        <button type="submit">Add Skill</button>
+      </form>
+
+      <a href="/" class="back-btn">← Back to Home</a>
+    </div>
+  </body>
+  {% include 'tracker/navbar.html' %}
+  <br /><br /><br /><br />
+</html>

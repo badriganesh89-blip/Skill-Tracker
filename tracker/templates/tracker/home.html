@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillTracker</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #1cc88a, #2ecc71);
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      .hero {
+        padding: 140px 30px 100px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin: 0;
+        font-weight: 700;
+        text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero p {
+        margin-top: 15px;
+        font-size: 20px;
+        opacity: 0.95;
+      }
+
+      .buttons {
+        margin-top: 30px;
+      }
+
+      .buttons a {
+        text-decoration: none;
+        padding: 14px 22px;
+        margin: 10px;
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        color: white;
+        backdrop-filter: blur(10px);
+        transition: 0.25s ease;
+        display: inline-block;
+      }
+
+      .buttons a:hover {
+        background: rgba(255, 255, 255, 0.45);
+      }
+
+      .section-title {
+        font-size: 32px;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .features {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        padding: 0 20px 80px;
+      }
+
+      .card {
+        width: 280px;
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 14px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        transition: 0.25s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        background: rgba(255, 255, 255, 0.35);
+      }
+
+      .card h3 {
+        margin: 0;
+        font-size: 22px;
+        color: #fff;
+      }
+
+      .card p {
+        font-size: 15px;
+        margin: 10px 0 20px;
+        color: #f6f6f6;
+      }
+
+      .card a {
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 16px;
+        background: rgba(0, 0, 0, 0.25);
+        color: #fff;
+        border-radius: 8px;
+        transition: 0.2s ease;
+        font-weight: 600;
+      }
+
+      .card a:hover {
+        background: rgba(0, 0, 0, 0.45);
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include 'tracker/navbar.html' %}
+
+    <div class="hero">
+      <h1>Welcome to SkillTracker</h1>
+      <p>
+        Track skills, manage students, and get job recommendations — all in one
+        place.
+      </p>
+
+      <div class="buttons">
+        <a href="{% url 'add_student' %}">Add Student</a>
+        <a href="{% url 'student_list' %}">View Students</a>
+        <a href="{% url 'dashboard' %}">Go to Dashboard</a>
+      </div>
+    </div>
+
+    <div class="section-title">Features</div>
+
+    <div class="features">
+      <div class="card">
+        <h3>Student Management</h3>
+        <p>Add, edit, and view detailed profiles.</p>
+        <a href="{% url 'add_student' %}">Add Student</a>
+      </div>
+
+      <div class="card">
+        <h3>Skill Tracking</h3>
+        <p>Assign skills to students effortlessly.</p>
+        <a href="{% url 'add_skill' %}">Add Skill</a>
+      </div>
+
+      <div class="card">
+        <h3>Job Recommendations</h3>
+        <p>Smart matching based on student skills.</p>
+        <a href="{% url 'student_list' %}">View Students</a>
+      </div>
+    </div>
+  </body>
+</html>
